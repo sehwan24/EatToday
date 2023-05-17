@@ -16,8 +16,6 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-    @NotNull
-    private String username;
 
     @NotNull
     private String email;
@@ -29,8 +27,7 @@ public class Member {
     private Authority authority;
 
     @Builder
-    public Member(String username, String password, String email, Authority authority) {
-        this.username = username;
+    public Member(String password, String email, Authority authority) {
         this.password = password;
         this.email = email;
         this.authority = authority;
