@@ -18,5 +18,6 @@ logging:
     org.hibernate.SQL: debug
     org.hibernate.orm.jdbc.bind:
 
+# 랜덤 비밀 키 발급 받음
 jwt:
-  secret:
+  secret: 0bd23166f2fd39744aeb25531eb77155290c53e5c44c4f3d872bb93cf5062c8260a3da93d1d9894dd1ee4a3e33053104a6ecbf4fbccc9cc73c2729d30ad886e9
