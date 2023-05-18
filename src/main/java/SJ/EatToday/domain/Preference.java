@@ -20,6 +20,15 @@ public class Preference {
 
     private int preference_weight;
 
+    @Enumerated(EnumType.STRING)
+    private Preference1 preference1;
+
+    @Enumerated(EnumType.STRING)
+    private Preference2 preference2;
+
+    @Enumerated(EnumType.STRING)
+    private Preference3 preference3;
+
     public int getPreferenceWeight() {
         return preference_weight;
     }
