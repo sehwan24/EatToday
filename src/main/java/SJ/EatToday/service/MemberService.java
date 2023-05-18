@@ -21,7 +21,7 @@ public class MemberService {
     public MemberResponseDto findMemberInfoByEmail(String email) {
         return memberRepository.findByEmail(email)
                 .map(MemberResponseDto::of)
-                .orElseThrow(() -> new RuntimeException("유저 저보가 없습니다."));  //클라이언트가 로그인 한적은 있으나, 로그인 한 이메일이 다를 경우
+                .orElseThrow(() -> new RuntimeException("유저 정보가 없습니다."));  //클라이언트가 로그인 한적은 있으나, 로그인 한 이메일이 다를 경우
     }
 
 }
