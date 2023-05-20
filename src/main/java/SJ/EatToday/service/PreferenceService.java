@@ -24,7 +24,7 @@ public class PreferenceService {
     }
 
     @Transactional
-    public void input(PreferenceRequestDto preferenceRequestDto) {
+    public void savePreference(PreferenceRequestDto preferenceRequestDto) {
         Preference preference = preferenceRequestDto.toPreference();
         preferenceRepository.save(preference);
     }
