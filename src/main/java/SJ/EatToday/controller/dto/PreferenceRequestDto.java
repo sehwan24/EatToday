@@ -1,9 +1,9 @@
 package SJ.EatToday.controller.dto;
 
 import SJ.EatToday.domain.Preference;
-import SJ.EatToday.domain.Preference1;
-import SJ.EatToday.domain.Preference2;
-import SJ.EatToday.domain.Preference3;
+import SJ.EatToday.domain.preference.Preference1;
+import SJ.EatToday.domain.preference.Preference2;
+import SJ.EatToday.domain.preference.Preference3;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

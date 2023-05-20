@@ -1,8 +1,7 @@
-package SJ.EatToday.domain;
+package SJ.EatToday.domain.preference;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 

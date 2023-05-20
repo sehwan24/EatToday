@@ -3,8 +3,6 @@ package SJ.EatToday.service;
 import SJ.EatToday.controller.dto.PreferenceRequestDto;
 import SJ.EatToday.controller.dto.PreferenceResponseDto;
 import SJ.EatToday.domain.Preference;
-import SJ.EatToday.domain.Preference1;
-import SJ.EatToday.domain.Preference3;
 import SJ.EatToday.repository.PreferenceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
