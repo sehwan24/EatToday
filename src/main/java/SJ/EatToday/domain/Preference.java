@@ -2,6 +2,7 @@ package SJ.EatToday.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -31,6 +32,13 @@ public class Preference {
 
     public int getPreferenceWeight() {
         return preference_weight;
+    }
+
+    @Builder
+    public Preference(Preference1 preference1, Preference2 preference2, Preference3 preference3) {
+        this.preference1 = preference1;
+        this.preference2 = preference2;
+        this.preference3 = preference3;
     }
 
 }
