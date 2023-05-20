@@ -18,15 +18,16 @@ public class PreferenceService {
     private final PreferenceRepository preferenceRepository;
 
     @Transactional(readOnly = true)
-    public PreferenceResponseDto findByPreference1(Preference1 preference1) {
-        Preference preference = PreferenceRepository.findByPreference1(preference1);
-        return new PreferenceResponseDto(preference);
+    public PreferenceResponseDto findPreferenceInfoById(Long preferenceId) {
+        return preferenceRepository.findById(preferenceId)
+                .map(PreferenceResponseDto::of)
+                .orElseThrow(() -> new RuntimeException("선호도 정보가 없습니다."));
     }
 
     @Transactional
-    public void savePreference(PreferenceRequestDto preferenceRequestDto) {
+    public PreferenceResponseDto input(PreferenceRequestDto preferenceRequestDto) {
         Preference preference = preferenceRequestDto.toPreference();
-        preferenceRepository.save(preference);
+        return PreferenceResponseDto.of(preferenceRepository.save(preference));
     }
 
 }

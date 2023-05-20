@@ -9,16 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PreferenceResponseDto {
+    private Long id;
 
-    private Preference1 preference1;
-    private Preference2 preference2;
-    private Preference3 preference3;
-
-    public PreferenceResponseDto(Preference preference) {
-        this.preference1 = preference.getPreference1();
-        this.preference2 = preference.getPreference2();
-        this.preference3 = preference.getPreference3();
+    public static PreferenceResponseDto of(Preference preference) {
+        return new PreferenceResponseDto(preference.getId());
     }
+
 
 
 }
