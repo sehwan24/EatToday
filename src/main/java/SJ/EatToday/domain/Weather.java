@@ -22,8 +22,10 @@ public class Weather {
     private Double humid;
     private String lastUpdateTime;
 
-    private int nx = 61;
-    private int ny = 126;
-
-
+    public Weather(Double temp, Double rainAmount, Double humid, String lastUpdateTime) {
+        this.temp = temp;
+        this.rainAmount = rainAmount;
+        this.humid = humid;
+        this.lastUpdateTime = lastUpdateTime;
+    }
 }
