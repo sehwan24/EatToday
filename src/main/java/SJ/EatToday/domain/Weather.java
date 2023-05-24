@@ -1,31 +1,26 @@
 package SJ.EatToday.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 public class Weather {
 
     @Id @GeneratedValue
     @Column(name = "weather_id")
     private Long id;
 
-    private Double temp;
-    private Double rainAmount;
-    private Double humid;
-    private String lastUpdateTime;
+    @Embedded
+    private Weather_Var weather_var;
 
-    public Weather(Double temp, Double rainAmount, Double humid, String lastUpdateTime) {
-        this.temp = temp;
-        this.rainAmount = rainAmount;
-        this.humid = humid;
-        this.lastUpdateTime = lastUpdateTime;
+    // 날씨 갱신
+    public void updateWeather(Weather_Var weather_var) {
+        this.weather_var = weather_var;
     }
+
+
 }

@@ -1,10 +1,13 @@
 package SJ.EatToday.controller.dto;
 
-import lombok.Data;
+import SJ.EatToday.domain.Weather_Var;
+import lombok.*;
 
-@Data
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class WeatherResponseDTO {
-    private WeatherHeaderDTO header;
 
-    private WeatherBodyDTO body;
+    private Weather_Var weather_var;
 }
