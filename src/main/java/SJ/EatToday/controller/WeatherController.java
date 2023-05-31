@@ -48,7 +48,7 @@ public class WeatherController {
 
 
         LocalDateTime now = LocalDateTime.now();
-        String yyyyMMdd = now.format(DateTimeFormatter.ofPattern("yyyyMMd"));
+        String yyyyMMdd = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         int hour = now.getHour();
         int min = now.getMinute();
         if(min <= 30) { // 해당 시각 발표 전에는 자료가 없음 - 이전시각을 기준으로 해야함

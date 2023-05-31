@@ -22,6 +22,10 @@ public class Preference {
     @JoinColumn(name = "member_id")
     private Member member;     //member entity와 1대1 매핑
 
+
+    @OneToOne(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    private Restaurant restaurant;
+
     private int preference_weight;
 
     @Enumerated(EnumType.STRING)
@@ -34,6 +38,7 @@ public class Preference {
     private Preference3 preference3;
 
     public int getPreferenceWeight() {
+
         return preference_weight;
     }
 
