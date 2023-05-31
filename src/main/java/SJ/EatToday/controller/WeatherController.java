@@ -40,12 +40,12 @@ public class WeatherController {
     @Transactional
     public ResponseEntity<WeatherResponseDTO> requestWeatherApi() throws IOException, URISyntaxException, JSONException {
         StringBuilder urlBuilder =  new StringBuilder("http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst");
-        String serviceKey = "OVUJG1Z/hQtUTuUIJ3YD3X5XvkHF83Nc6KrOvraplk1rX5uT2zVwR2u750IZmw1GFdtOOFbnv9oboNp0cYCn4Q==";
-        String encodedServiceKey = URLEncoder.encode(serviceKey, "UTF-8");
+        String serviceKey = "OVUJG1Z%2FhQtUTuUIJ3YD3X5XvkHF83Nc6KrOvraplk1rX5uT2zVwR2u750IZmw1GFdtOOFbnv9oboNp0cYCn4Q%3D%3D";
 
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "JSON", Charset.forName("UTF-8")));
+
 
         LocalDateTime now = LocalDateTime.now();
         String yyyyMMdd = now.format(DateTimeFormatter.ofPattern("yyyyMMd"));
@@ -75,7 +75,7 @@ public class WeatherController {
         log.info("API 요청 발송 >>> 연월일: {}, 시각: {}", yyyyMMdd, hourStr);
 
         try {
-            urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + encodedServiceKey);
+            urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey);
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
             urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("1000", "UTF-8"));
             urlBuilder.append("&" + URLEncoder.encode("dataType", "UTF-8") + "=" + URLEncoder.encode("JSON", "UTF-8"));
