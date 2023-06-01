@@ -6,10 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter @Setter
 public class Restaurant {
 
     @Id @GeneratedValue
@@ -30,10 +30,13 @@ public class Restaurant {
 
     private String name;
 
+    private String address;
+
     private int total_weight;
 
     public int getTotalWeight() {
         total_weight = preference.getPreferenceWeight() + weather.getWeatherWeight() + season.getSeasonWeight();
         return total_weight;
     }
+
 }
