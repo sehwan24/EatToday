@@ -26,6 +26,7 @@ public class AuthService {
     private final TokenProvider tokenProvider;
     private final RefreshTokenRepository refreshTokenRepository;
 
+
     @Transactional
     public MemberResponseDto signup(MemberRequestDto memberRequestDto) {
         if (memberRepository.existsByEmail(memberRequestDto.getEmail())) {
@@ -55,6 +56,7 @@ public class AuthService {
                 .build();
 
         refreshTokenRepository.save(refreshToken);
+
 
         // 5. 토큰 발급
         return tokenDto;

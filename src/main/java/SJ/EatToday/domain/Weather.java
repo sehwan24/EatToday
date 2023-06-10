@@ -14,7 +14,7 @@ public class Weather {
     @Column(name = "weather_id")
     private Long id;
 
-    @OneToOne(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "weather", fetch = FetchType.LAZY)
     private Restaurant restaurant;
 
     @Embedded

@@ -23,7 +23,7 @@ public class Preference {
     private Member member;     //member entity와 1대1 매핑
 
 
-    @OneToOne(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "preference", fetch = FetchType.LAZY)
     private Restaurant restaurant;
 
     private int preference_weight;

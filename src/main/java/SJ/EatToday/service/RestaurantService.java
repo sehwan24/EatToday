@@ -1,6 +1,6 @@
 package SJ.EatToday.service;
 
-import SJ.EatToday.domain.Restaurant;
+import SJ.EatToday.domain.Weather;
 import SJ.EatToday.repository.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,11 +13,21 @@ public class RestaurantService {
 
     private final RestaurantRepository restaurantRepository;
 
-    @Transactional
-    public void saveRestaurant(Restaurant restaurant) {
+
+    /*@Transactional
+    public void save(Restaurant restaurant) {
         restaurantRepository.save(restaurant);
+    }*/
+
+    @Transactional
+    public void updateSeasonWeight() {
+        restaurantRepository.updateSeasonWeight();
     }
 
+    @Transactional
+    public void updateWeatherWeight() {
+        restaurantRepository.updateWeatherWeight();
+    }
 
 
 

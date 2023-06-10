@@ -37,6 +37,8 @@ import java.time.format.DateTimeFormatter;
 public class PreferenceController {
     private final PreferenceService preferenceService;
 
+
+
     @PostMapping("/input")
     public ResponseEntity<PreferenceResponseDto> input(@RequestBody PreferenceRequestDto preferenceRequestDto) {
         return ResponseEntity.ok(preferenceService.input(preferenceRequestDto));
