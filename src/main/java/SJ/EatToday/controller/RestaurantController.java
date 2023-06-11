@@ -20,8 +20,9 @@ public class RestaurantController {
 
     @PostMapping("/recommend")
     @Transactional
-    public void update() {
+    public String update() {
         restaurantService.updateSeasonWeight();
+        return "/recommend/new";
     }
 
 

@@ -22,7 +22,7 @@ public class RestaurantRepository {
 
         }
         else if (M==6||M==7||M==8) {
-            em.createQuery("update restaurant r set r.total_weight = r.total_weight + 10 where r.season_int = 2");
+            em.createQuery("update Restaurant r set r.total_weight = r.total_weight + 10 where r.season_int = 2");
         }
         else if (M==9||M==10||M==11) {
 

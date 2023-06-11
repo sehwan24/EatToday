@@ -5,7 +5,9 @@ import SJ.EatToday.controller.dto.PreferenceResponseDto;
 import SJ.EatToday.controller.dto.WeatherResponseDTO;
 import SJ.EatToday.domain.Weather;
 import SJ.EatToday.domain.Weather_Var;
+import SJ.EatToday.repository.RestaurantRepository;
 import SJ.EatToday.service.PreferenceService;
+import SJ.EatToday.service.RestaurantService;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +38,8 @@ import java.time.format.DateTimeFormatter;
 @RequestMapping("/preference")
 public class PreferenceController {
     private final PreferenceService preferenceService;
+
+    private final RestaurantService restaurantService;
 
 
 
