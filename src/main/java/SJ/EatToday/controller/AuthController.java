@@ -37,7 +37,7 @@ import java.time.format.DateTimeFormatter;
 public class AuthController {
     private final AuthService authService;
 
-    private final RestaurantService restaurantService;
+
 
 
     @PostMapping("/signup")
@@ -45,10 +45,11 @@ public class AuthController {
         return ResponseEntity.ok(authService.signup(memberRequestDto));
     }
 
+
     @PostMapping("/login")
     public ResponseEntity<TokenDto> login(@RequestBody MemberRequestDto memberRequestDto) {
-        restaurantService.updateSeasonWeight();
-        restaurantService.updateWeatherWeight();
+        //restaurantService.updateSeasonWeight();
+        //restaurantService.updateWeatherWeight();
         return ResponseEntity.ok(authService.login(memberRequestDto));
     }
 

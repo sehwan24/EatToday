@@ -24,11 +24,10 @@ public class RestaurantService {
         restaurantRepository.updateSeasonWeight();
     }
 
-    @Transactional
+    /*@Transactional
     public void updateWeatherWeight() {
         restaurantRepository.updateWeatherWeight();
-    }
-
+    }*/
 
 
 }

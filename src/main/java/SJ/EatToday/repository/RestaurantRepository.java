@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class RestaurantRepository {
 
     private final EntityManager em;
-    private final Weather_Var weather_var;
+    //private final Weather_Var weather_var;
 
     public void updateSeasonWeight() {
         LocalDateTime now = LocalDateTime.now();
@@ -33,7 +33,7 @@ public class RestaurantRepository {
     }
 
 
-    public void updateWeatherWeight() {
+    /*public void updateWeatherWeight() {
         if(weather_var.getTemp() > 30) {
             em.createQuery("update restaurant set total_weight = total_weight + 10 where weather_int = 1");
         }
@@ -43,6 +43,6 @@ public class RestaurantRepository {
         if(weather_var.getTemp() < 0) {
             em.createQuery("update restaurant set total_weight = total_weight + 10 where weather_int = 3");
         }
-    }
+    }*/
 
 }
