@@ -1,13 +1,16 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/EatToday
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://database-1.ca4sg24qr4gy.us-east-1.rds.amazonaws.com:3306/EatToday
+    username: sehwan24
+    password: "**Se1224"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  profiles:
+    include: real-db
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
 #        show_sql: true
