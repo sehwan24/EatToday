@@ -6,10 +6,7 @@ import SJ.EatToday.domain.preference.Preference2;
 import SJ.EatToday.domain.preference.Preference3;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -53,7 +50,10 @@ public class Restaurant {
     private int total_weight;
 
 
-
+    @Builder
+    public Restaurant(String name) {
+        this.name = name;
+    }
 
 
 }
