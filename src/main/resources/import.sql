@@ -1,2 +1,4 @@
 insert into Restaurant(restaurant_id, address, name, preference1, preference2, preference3, season_int, weather_int ,total_weight) values(1,'능동로 135-2' ,'우마이도', 4, 1, 3, 5, 3, 0);
 insert into Restaurant(restaurant_id, address, name, preference1, preference2, preference3, season_int, weather_int ,total_weight) values(2,'동일로22길 117-16' ,'포크포크', 1, 2, 1, 2, 1, 0);
+insert into Restaurant(restaurant_id, address, name, preference1, preference2, preference3, season_int, weather_int ,total_weight) values(3,'능동로16길 48' ,'알촌', 1, 1, 3, 5, 4, 0);
+insert into Restaurant(restaurant_id, address, name, preference1, preference2, preference3, season_int, weather_int ,total_weight) values(4,'광나루로24길 22' ,'가람성', 3, 1, 1, 5, 4, 0);

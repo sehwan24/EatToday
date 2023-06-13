@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.*;
 public class PreferenceController {
     private final PreferenceService preferenceService;
 
-    private final RestaurantService restaurantService;
-
 
 
     @PostMapping("/input")

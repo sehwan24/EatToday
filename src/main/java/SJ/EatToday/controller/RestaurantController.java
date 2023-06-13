@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -40,7 +42,12 @@ public class RestaurantController {
         restaurantService.updateSeasonWeight();
 
 
-        RecommendResponseDTO dto = restaurantService.selectRestaurant();
+
+
+        RecommendResponseDTO dto = RecommendResponseDTO.builder()
+                .name(restaurantService.selectRestaurant())
+                .address(restaurantService.selectRestaurant2())
+                .build();
         return ResponseEntity.ok(dto);
 
     }
