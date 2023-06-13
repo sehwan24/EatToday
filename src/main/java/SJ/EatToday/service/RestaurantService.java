@@ -2,6 +2,8 @@ package SJ.EatToday.service;
 
 import SJ.EatToday.controller.dto.PreferenceRequestDto;
 import SJ.EatToday.controller.dto.PreferenceResponseDto;
+//import SJ.EatToday.controller.dto.RestaurantRequestDto;
+//import SJ.EatToday.controller.dto.RestaurantResponseDto;
 import SJ.EatToday.controller.dto.RestaurantRequestDto;
 import SJ.EatToday.controller.dto.RestaurantResponseDto;
 import SJ.EatToday.domain.Preference;
