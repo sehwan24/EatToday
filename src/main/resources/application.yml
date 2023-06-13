@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://sehwan24.cfj6xtfovmom.ap-northeast-2.rds.amazonaws.com:3306/EatToday
+    url: jdbc:mysql://sehwan24.cfj6xtfovmom.ap-northeast-2.rds.amazonaws.com:3306/EatToday?useSSL=false
     username: sehwan24
     password: "**Se1224"
     driver-class-name: com.mysql.cj.jdbc.Driver
