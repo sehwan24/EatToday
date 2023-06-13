@@ -20,16 +20,18 @@ public class Weather {
     @Embedded
     private Weather_Var weather_var;
 
-    private int weather_weight;
+    /*private int weather_weight;
 
     public int getWeatherWeight() {
         return weather_weight;
-    }
+    }*/
 
     // 날씨 갱신
-    public void updateWeather(Weather_Var weather_var) {
+    /*public void updateWeather(Weather_Var weather_var) {
+        this.weather_var = weather_var;
+    }*/
+
+    public Weather(Weather_Var weather_var) {
         this.weather_var = weather_var;
     }
-
-
 }

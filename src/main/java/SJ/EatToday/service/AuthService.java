@@ -34,6 +34,8 @@ public class AuthService {
         }
 
         Member member = memberRequestDto.toMember(passwordEncoder);
+        System.out.println("member.getEmail() = " + member.getEmail());
+        System.out.println("member.getPassword() = " + member.getPassword());
         return MemberResponseDto.of(memberRepository.save(member));
     }
 

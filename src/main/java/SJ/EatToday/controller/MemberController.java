@@ -5,14 +5,12 @@ import SJ.EatToday.service.MemberService;
 import SJ.EatToday.util.SecurityUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/member")
+@CrossOrigin(origins = "http://localhost:3000")
 public class MemberController {
     private final MemberService memberService;
 

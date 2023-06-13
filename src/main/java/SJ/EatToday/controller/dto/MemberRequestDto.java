@@ -17,14 +17,18 @@ public class MemberRequestDto {
     private String password;
 
     public Member toMember(PasswordEncoder passwordEncoder) {
+        System.out.println("email = " + email);
+        System.out.println("password = " + password);
         return Member.builder()
-                .email(email)
-                .password(passwordEncoder.encode(password))
+                .email(email.split("\"")[3])
+                .password(passwordEncoder.encode(password.split("\"")[3]))
                 .authority(Authority.ROLE_USER)
                 .build();
     }
 
     public UsernamePasswordAuthenticationToken toAuthentication() {
-        return new UsernamePasswordAuthenticationToken(email, password);
+        System.out.println("email = " + email);
+        System.out.println("password = " + password);
+        return new UsernamePasswordAuthenticationToken(email.split("\"")[3], password.split("\"")[3]);
     }
 }

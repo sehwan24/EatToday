@@ -10,6 +10,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
+@NoArgsConstructor
 @Entity
 @Getter @Setter
 public class Restaurant {
@@ -50,10 +51,8 @@ public class Restaurant {
     private int total_weight;
 
 
-    @Builder
-    public Restaurant(String name) {
+    public Restaurant(String name, String address) {
         this.name = name;
+        this.address = address;
     }
-
-
 }

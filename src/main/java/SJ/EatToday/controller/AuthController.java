@@ -6,6 +6,7 @@ import SJ.EatToday.domain.Weather;
 import SJ.EatToday.domain.Weather_Var;
 import SJ.EatToday.service.AuthService;
 import SJ.EatToday.service.RestaurantService;
+import SJ.EatToday.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
@@ -34,14 +35,19 @@ import java.time.format.DateTimeFormatter;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class AuthController {
     private final AuthService authService;
+
+    private final WeatherService weatherService;
 
 
 
 
     @PostMapping("/signup")
     public ResponseEntity<MemberResponseDto> signup(@RequestBody MemberRequestDto memberRequestDto) {
+        System.out.println("memberRequestDto = " + memberRequestDto.getEmail());
+        System.out.println("memberRequestDto.getPassword() = " + memberRequestDto.getPassword());
         return ResponseEntity.ok(authService.signup(memberRequestDto));
     }
 
@@ -50,6 +56,8 @@ public class AuthController {
     public ResponseEntity<TokenDto> login(@RequestBody MemberRequestDto memberRequestDto) {
         //restaurantService.updateSeasonWeight();
         //restaurantService.updateWeatherWeight();
+        System.out.println("memberRequestDto = " + memberRequestDto.getEmail());
+        System.out.println("memberRequestDto.getPassword() = " + memberRequestDto.getPassword());
         return ResponseEntity.ok(authService.login(memberRequestDto));
     }
 
@@ -156,7 +164,8 @@ public class AuthController {
             }
 
             Weather_Var weather_var = new Weather_Var(temp, rainAmount, humid, currentChangeTime);
-            weather.updateWeather(weather_var); // DB 업데이트
+            Weather weather1 = new Weather(weather_var);
+            weatherService.updateWeather(weather1); // DB 업데이트
             WeatherResponseDTO dto = WeatherResponseDTO.builder()
                     .weather_var(weather_var)
                     .build();

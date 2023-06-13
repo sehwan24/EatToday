@@ -3,6 +3,8 @@ package SJ.EatToday.controller;
 import SJ.EatToday.controller.dto.WeatherResponseDTO;
 import SJ.EatToday.domain.Weather;
 import SJ.EatToday.domain.Weather_Var;
+import SJ.EatToday.repository.WeatherRepository;
+import SJ.EatToday.service.WeatherService;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +15,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +36,10 @@ import java.time.format.DateTimeFormatter;
 @RestController
 @RequestMapping("/api/weather")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class WeatherController {
+
+    private final WeatherService weatherService;
 
 
     @GetMapping
@@ -138,7 +144,7 @@ public class WeatherController {
             }
 
             Weather_Var weather_var = new Weather_Var(temp, rainAmount, humid, currentChangeTime);
-            weather.updateWeather(weather_var); // DB 업데이트
+            weatherService.updateWeather(weather); // DB 업데이트
             WeatherResponseDTO dto = WeatherResponseDTO.builder()
                     .weather_var(weather_var)
                     .build();
