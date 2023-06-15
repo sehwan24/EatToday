@@ -14,7 +14,7 @@ public class RecommendResponseDTO {
 
     private String name;
 
-    private String address;
+    private String menu;
 
 
 }

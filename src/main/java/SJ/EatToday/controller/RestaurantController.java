@@ -3,18 +3,12 @@ package SJ.EatToday.controller;
 import SJ.EatToday.controller.dto.*;
 //import SJ.EatToday.controller.dto.RestaurantRequestDto;
 //import SJ.EatToday.controller.dto.RestaurantResponseDto;
-import SJ.EatToday.domain.Restaurant;
 import SJ.EatToday.service.RestaurantService;
 import SJ.EatToday.service.WeatherService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-
-import java.nio.file.WatchEvent;
-import java.util.List;
 
 
 @RestController
@@ -49,7 +43,7 @@ public class RestaurantController {
 
         RecommendResponseDTO dto = RecommendResponseDTO.builder()
                 .name(restaurantService.selectRestaurant())
-                .address(restaurantService.selectRestaurant2())
+                .menu(restaurantService.selectRestaurant2())
                 .build();
         return ResponseEntity.ok(dto);
 

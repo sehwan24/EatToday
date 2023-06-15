@@ -28,9 +28,9 @@ public class Restaurant {
     @JoinColumn(name = "season_id")
     private Season season;
 
-    private String restaurant_name;
+    private String name;
 
-    private String restaurant_address;
+    private String menu;
 
     private Preference1 preference1;
 
@@ -49,7 +49,7 @@ public class Restaurant {
 
 
     public Restaurant(String name, String address) {
-        this.restaurant_name = name;
-        this.restaurant_address = address;
+        this.name = name;
+        this.menu = address;
     }
 }
