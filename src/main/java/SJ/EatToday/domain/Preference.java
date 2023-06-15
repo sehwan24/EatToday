@@ -1,9 +1,5 @@
 package SJ.EatToday.domain;
 
-import SJ.EatToday.domain.preference.Preference1;
-import SJ.EatToday.domain.preference.Preference2;
-import SJ.EatToday.domain.preference.Preference3;
-import SJ.EatToday.domain.preference.Preference4;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
