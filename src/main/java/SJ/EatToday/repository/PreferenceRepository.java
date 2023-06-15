@@ -1,12 +1,6 @@
 package SJ.EatToday.repository;
 
 import SJ.EatToday.domain.Preference;
-import SJ.EatToday.domain.Weather;
-import SJ.EatToday.domain.preference.Preference1;
-import SJ.EatToday.domain.preference.Preference2;
-import SJ.EatToday.domain.preference.Preference3;
-import SJ.EatToday.domain.preference.Preference4;
-import jakarta.persistence.EntityManager;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
