@@ -21,7 +21,7 @@ public class MemberRequestDto {
         System.out.println("password = " + password);
         return Member.builder()
                 .email(email)//.split("\"")[3])
-                .password(passwordEncoder.encode(password))//.split("\"")[3]))
+                .password(passwordEncoder.encode(password.split("\"")[3]))//.split("\"")[3]))
                 .authority(Authority.ROLE_USER)
                 .build();
     }
@@ -29,6 +29,6 @@ public class MemberRequestDto {
     public UsernamePasswordAuthenticationToken toAuthentication() {
         System.out.println("email = " + email);
         System.out.println("password = " + password);
-        return new UsernamePasswordAuthenticationToken(email, password);//.split("\"")[3], password.split("\"")[3]);
+        return new UsernamePasswordAuthenticationToken(email.split("\"")[3], password.split("\"")[3]);//.split("\"")[3], password.split("\"")[3]);
     }
 }
