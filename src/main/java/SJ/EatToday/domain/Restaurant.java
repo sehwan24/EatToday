@@ -4,6 +4,7 @@ package SJ.EatToday.domain;
 import SJ.EatToday.domain.preference.Preference1;
 import SJ.EatToday.domain.preference.Preference2;
 import SJ.EatToday.domain.preference.Preference3;
+import SJ.EatToday.domain.preference.Preference4;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,11 +33,13 @@ public class Restaurant {
 
     private String menu;
 
-    private Preference1 preference1;
+    private String preference1;
 
-    private Preference2 preference2;
+    private String preference2;
 
-    private Preference3 preference3;
+    private String preference3;
+
+    private String preference4;
 
     private int season_int;  //1 봄, 2 여름, 3 가을, 4 겨울, 5 계절 영향 없음
 

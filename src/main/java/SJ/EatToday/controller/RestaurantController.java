@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant")
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
@@ -37,7 +37,7 @@ public class RestaurantController {
     @Transactional
     public ResponseEntity<RecommendResponseDTO> recommend() {
         restaurantService.updateSeasonWeight();
-        restaurantService.updateWeatherWeight();
+        //restaurantService.updateWeatherWeight();
         restaurantService.updatePreferenceWeight();
 
 

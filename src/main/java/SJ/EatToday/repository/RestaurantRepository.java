@@ -15,6 +15,49 @@ import java.util.Optional;
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
 
 
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference4 = 3", nativeQuery = true)
+    void updatePreferenceWeight4_2();
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference4 = 1", nativeQuery = true)
+    void updatePreferenceWeight4_1();
+
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference3 = 1", nativeQuery = true)
+    void updatePreferenceWeight3_1();
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference3 = 2", nativeQuery = true)
+    void updatePreferenceWeight3_2();
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference3 = 3", nativeQuery = true)
+    void updatePreferenceWeight3_3();
+
+
+
+
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference2 = 1", nativeQuery = true)
+    void updatePreferenceWeight2_1();
+
+    @Transactional
+    @Modifying
+    @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference2 = 2", nativeQuery = true)
+    void updatePreferenceWeight2_2();
+
+
+
     @Transactional
     @Modifying
     @Query(value = "update Restaurant r set r.total_weight = r.total_weight + 10 where r.preference1 = 1", nativeQuery = true)
@@ -76,11 +119,11 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     void updateSeasonWeight4();
 
     @Transactional
-    @Query(value = "select restaurant_name from restaurant where total_weight = (select max(total_weight) from restaurant) limit 1", nativeQuery = true)
+    @Query(value = "select name from restaurant where total_weight = (select max(total_weight) from restaurant) limit 1", nativeQuery = true)
     String selectRestaurant();
 
     @Transactional
-    @Query(value = "select restaurant_address from restaurant where total_weight = (select max(total_weight) from restaurant) limit 1", nativeQuery = true)
+    @Query(value = "select menu from restaurant where total_weight = (select max(total_weight) from restaurant) limit 1", nativeQuery = true)
     String selectRestaurant2();
 
 

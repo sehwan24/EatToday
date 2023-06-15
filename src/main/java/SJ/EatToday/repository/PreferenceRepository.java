@@ -5,6 +5,7 @@ import SJ.EatToday.domain.Weather;
 import SJ.EatToday.domain.preference.Preference1;
 import SJ.EatToday.domain.preference.Preference2;
 import SJ.EatToday.domain.preference.Preference3;
+import SJ.EatToday.domain.preference.Preference4;
 import jakarta.persistence.EntityManager;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -20,13 +21,17 @@ public interface PreferenceRepository extends JpaRepository<Preference, Long> {
 
     @Transactional
     @Query(value = "select preference1 from preference", nativeQuery = true)
-    Preference1 getPreference1();
+    String getPreference1();
 
     @Transactional
     @Query(value = "select preference2 from preference", nativeQuery = true)
-    Preference2 getPreference2();
+    String getPreference2();
 
     @Transactional
     @Query(value = "select preference3 from preference", nativeQuery = true)
-    Preference3 getPreference3();
+    String getPreference3();
+
+    @Transactional
+    @Query(value = "select preference4 from preference", nativeQuery = true)
+    String getPreference4();
 }

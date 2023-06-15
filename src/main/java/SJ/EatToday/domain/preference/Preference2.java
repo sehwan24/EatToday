@@ -5,10 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 public enum Preference2 {
-    HOT("뜨거운 음식"), COLD("차가운 음식");
+    SPICY("매운 음식"), NO_SPICY("안 매운 음식");
 
     @Getter
     private final String value;
+
 
     Preference2(String value) {
         this.value = value;

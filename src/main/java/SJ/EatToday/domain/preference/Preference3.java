@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 public enum Preference3 {
-    SPICY("매운 음식"), SWEET("단 음식"), SALTY("짠 음식");
+    BREAD("빵"), RICE("밥"), NOODLE("면");
 
     @Getter
     private final String value;

@@ -32,6 +32,8 @@ public class SecurityConfig {
                 .requestMatchers("/h2-console/**", "/favicon.ico");
     }
 
+
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // CSRF 설정 Disable
@@ -57,7 +59,9 @@ public class SecurityConfig {
                 .and()
                 .authorizeHttpRequests()
                 .requestMatchers("/auth/**").permitAll()
-                .anyRequest().authenticated()   // 나머지 API 는 전부 인증 필요
+                .requestMatchers("/preference/**").permitAll()
+                .requestMatchers("/restaurant/**").permitAll()
+                //.anyRequest().authenticated()   // 나머지 API 는 전부 인증 필요
 
                 // JwtFilter 를 addFilterBefore 로 등록했던 JwtSecurityConfig 클래스를 적용
                 .and()

@@ -3,6 +3,7 @@ package SJ.EatToday.domain;
 import SJ.EatToday.domain.preference.Preference1;
 import SJ.EatToday.domain.preference.Preference2;
 import SJ.EatToday.domain.preference.Preference3;
+import SJ.EatToday.domain.preference.Preference4;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -28,14 +29,17 @@ public class Preference {
 
     private int preference_weight;
 
-    @Enumerated(EnumType.STRING)
-    private Preference1 preference1;
+    //@Enumerated(EnumType.STRING)
+    private String preference1;
 
-    @Enumerated(EnumType.STRING)
-    private Preference2 preference2;
+    //@Enumerated(EnumType.STRING)
+    private String preference2;
 
-    @Enumerated(EnumType.STRING)
-    private Preference3 preference3;
+    //@Enumerated(EnumType.STRING)
+    private String preference3;
+
+    //@Enumerated(EnumType.STRING)
+    private String preference4;
 
     public int getPreferenceWeight() {
 
@@ -43,10 +47,11 @@ public class Preference {
     }
 
     @Builder
-    public Preference(Preference1 preference1, Preference2 preference2, Preference3 preference3) {
+    public Preference(String preference1, String preference2, String preference3, String preference4) {
         this.preference1 = preference1;
         this.preference2 = preference2;
         this.preference3 = preference3;
+        this.preference4 = preference4;
     }
 
 }
