@@ -6,7 +6,7 @@ import lombok.Getter;
 
 
 public enum Preference1 {
-    KOREAN("한식"), WESTERN("양식"), CHINESE("중식"), JAPANESE("일식");
+    KOREAN("한식"), WESTERN("양식"), CHINESE("중식"), JAPANESE("일식"), NOTHING("없음");
 
     @Getter
     private final String value;

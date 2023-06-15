@@ -5,6 +5,7 @@ import SJ.EatToday.controller.dto.*;
 //import SJ.EatToday.controller.dto.RestaurantResponseDto;
 import SJ.EatToday.domain.Restaurant;
 import SJ.EatToday.service.RestaurantService;
+import SJ.EatToday.service.WeatherService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.WatchEvent;
 import java.util.List;
 
 
@@ -22,6 +24,7 @@ import java.util.List;
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
+    private final WeatherService weatherService;
 
 
     /*@PostMapping("/recommend")
@@ -40,8 +43,8 @@ public class RestaurantController {
     @Transactional
     public ResponseEntity<RecommendResponseDTO> recommend() {
         restaurantService.updateSeasonWeight();
-
-
+        restaurantService.updateWeatherWeight();
+        restaurantService.updatePreferenceWeight();
 
 
         RecommendResponseDTO dto = RecommendResponseDTO.builder()

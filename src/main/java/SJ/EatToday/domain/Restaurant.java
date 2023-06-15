@@ -5,10 +5,7 @@ import SJ.EatToday.domain.preference.Preference1;
 import SJ.EatToday.domain.preference.Preference2;
 import SJ.EatToday.domain.preference.Preference3;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Entity
@@ -31,9 +28,9 @@ public class Restaurant {
     @JoinColumn(name = "season_id")
     private Season season;
 
-    private String name;
+    private String restaurant_name;
 
-    private String address;
+    private String restaurant_address;
 
     private Preference1 preference1;
 
@@ -52,7 +49,7 @@ public class Restaurant {
 
 
     public Restaurant(String name, String address) {
-        this.name = name;
-        this.address = address;
+        this.restaurant_name = name;
+        this.restaurant_address = address;
     }
 }
