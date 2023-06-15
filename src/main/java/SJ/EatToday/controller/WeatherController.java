@@ -36,7 +36,7 @@ import java.time.format.DateTimeFormatter;
 @RestController
 @RequestMapping("/api/weather")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class WeatherController {
 
     private final WeatherService weatherService;
