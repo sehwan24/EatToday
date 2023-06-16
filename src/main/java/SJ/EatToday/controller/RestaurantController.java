@@ -37,7 +37,7 @@ public class RestaurantController {
     @Transactional
     public ResponseEntity<RecommendResponseDTO> recommend() {
         restaurantService.updateSeasonWeight();
-        //restaurantService.updateWeatherWeight();
+        restaurantService.updateWeatherWeight();
         restaurantService.updatePreferenceWeight();
 
 
