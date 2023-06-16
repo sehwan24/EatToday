@@ -37,7 +37,6 @@ public class TokenProvider {
     }
 
     public TokenDto generateTokenDto(Authentication authentication) {
-        // 권한들 가져오기
         String authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
